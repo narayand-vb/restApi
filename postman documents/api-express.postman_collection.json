@@ -1,0 +1,956 @@
+{
+	"info": {
+		"_postman_id": "fe19cb7c-4108-4cd4-80d8-dc8daf4ce2c9",
+		"name": "api-express",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "loginLogout",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "abc1",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "narayankdubey@gmail.com",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"email\": \"narayankdubey@gmail.com\",\r\n   \"password\": \"abc123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "log out",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/logout",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "create user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkJhaWpuYXRoRHViZXk0QGdtYWlsLmNvbSIsImlhdCI6MTYzNDIxNTkxMX0.2L0lw9CTutsiYdFEr-F6Yt-u_LJ9WwbjJU3gZm1sWAk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"first_name\": \"Nitish\",\r\n  \"last_name\": \"Pandey\",\r\n  \"email\": \"nitishpandey1@gmail.com\",\r\n  \"role\": \"user\",\r\n  \"profile_image\": \"...\",\r\n  \"password\" : \"abc123\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/users",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkJhaWpuYXRoRHViZXk0QGdtYWlsLmNvbSIsImlhdCI6MTYzNDIxNTkxMX0.2L0lw9CTutsiYdFEr-F6Yt-u_LJ9WwbjJU3gZm1sWAk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first_name\": \"Arun\",\r\n    \"last_name\": \"Dubey\",\r\n    \"email\": \"arun.dubey@gmail.com\",\r\n    \"role\": \"user\",\r\n    \"profile_image\": \"...\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/users",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkJhaWpuYXRoRHViZXk0QGdtYWlsLmNvbSIsImlhdCI6MTYzNDIxNTkxMX0.2L0lw9CTutsiYdFEr-F6Yt-u_LJ9WwbjJU3gZm1sWAk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/users/61683a813808ca47d56ffb94",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"61683a813808ca47d56ffb94"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkJhaWpuYXRoRHViZXk0QGdtYWlsLmNvbSIsImlhdCI6MTYzNDIxNTkxMX0.2L0lw9CTutsiYdFEr-F6Yt-u_LJ9WwbjJU3gZm1sWAk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"narayan.d@valuebound.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/users/61683a813808ca47d56ffb94",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"61683a813808ca47d56ffb94"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkJhaWpuYXRoRHViZXk0QGdtYWlsLmNvbSIsImlhdCI6MTYzNDIxNTkxMX0.2L0lw9CTutsiYdFEr-F6Yt-u_LJ9WwbjJU3gZm1sWAk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/users/61683a813808ca47d56ffb94",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"61683a813808ca47d56ffb94"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "role",
+			"item": [
+				{
+					"name": "create role",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Nitish Pandey\",\r\n    \"slug\" : \"nitish-user\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/roles",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get roles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/roles",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get role",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/roles/616cf2eeff201df2ad7448b4",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"roles",
+								"616cf2eeff201df2ad7448b4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Ranjan Pandey\",\r\n    \"slug\" : \"ranjan-user\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/roles/616aba0cc310093d645e2ddf",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"roles",
+								"616aba0cc310093d645e2ddf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete role",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/roles/616cf2eeff201df2ad7448b4",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"roles",
+								"616cf2eeff201df2ad7448b4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "categories",
+			"item": [
+				{
+					"name": "create categories",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n  \"name\" : \"Iphone\",\r\n  \"slug\" : \"iphone-mobile\",\r\n  \"image\" : \"...\",\r\n  \"description\" : \"This is a very good mobile\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/categories",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/categories",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/categories/616cf3c6ff201df2ad7448bf",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"categories",
+								"616cf3c6ff201df2ad7448bf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update categories",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"name\":\"Iphone 13 pro\",\r\n\"slug\":\"iphone-mobile\",\r\n\"image\":\"...\",\r\n\"description\":\"This is a very good mobile\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/categories/616cf3c6ff201df2ad7448bf",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"categories",
+								"616cf3c6ff201df2ad7448bf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete categories",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/categories/616cf3c6ff201df2ad7448bf",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"categories",
+								"616cf3c6ff201df2ad7448bf"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tag",
+			"item": [
+				{
+					"name": "create tag",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\" : \"Camera\",\r\n  \"slug\" : \"sony-camera\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/tags",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"tags"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get tags",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/tags",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"tags"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get tag",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/tags/616cf471ff201df2ad7448c9",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"tags",
+								"616cf471ff201df2ad7448c9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update tags",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Camera\",\r\n    \"slug\" : \"nikon-camera\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/tags/616cf471ff201df2ad7448c9",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"tags",
+								"616cf471ff201df2ad7448c9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete tags",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/tags/616cf471ff201df2ad7448c9",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"tags",
+								"616cf471ff201df2ad7448c9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "create products",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\" : \"Redmie 8\",\r\n  \"thumbnail\" : \"...\",\r\n  \"product_gallery\" : [\"img1\",\"img2\",\"img3\"],\r\n  \"description\" : \"This is a very good mobile\",\r\n  \"base_price\" : 12999.50,\r\n  \"sell_price\" : 13999.00,\r\n  \"category_name\" : \"Mobile\",\r\n  \"tags\": [\"mobile\",\"Apple\",\"ios\"],\r\n  \"additional_information\" : \"No additional information\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/products",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/products",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "tags",
+									"value": "samsung",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/products/616bc5f1fefff034d514df9e",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								"616bc5f1fefff034d514df9e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update products",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Iphone 12\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/products/616bc5f1fefff034d514df9e",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								"616bc5f1fefff034d514df9e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete products",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/products/616bc5f1fefff034d514df9e",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								"616bc5f1fefff034d514df9e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cart",
+			"item": [
+				{
+					"name": "create cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"product\" : \"Iphone 12\",\r\n  \"user\" : \"Nitish pandey\",\r\n  \"product_qty\" : 1,\r\n  \"base_price\" : 25000,\r\n  \"sell_price\" : 27999,\r\n  \"total_price\" : 529999\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/carts",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"carts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get carts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/carts",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"carts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get cart",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/carts/616cf514ff201df2ad7448d9",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"carts",
+								"616cf514ff201df2ad7448d9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update carts",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\":\"Nitish Pandey\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/carts/616cf514ff201df2ad7448d9",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"carts",
+								"616cf514ff201df2ad7448d9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete carts",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/carts/616cf514ff201df2ad7448d9",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"carts",
+								"616cf514ff201df2ad7448d9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "order",
+			"item": [
+				{
+					"name": "create order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"user_id\" : \"125dgg\",\r\n  \"total_items\" : 2,\r\n  \"products\" : [\"Samsung A20\",\"Iphone 12\"],\r\n  \"billing_address\" : \"A.N College, boring road, patna(801103)\",\r\n  \"shipping_address\" : \"new Delhi (1100011)\",\r\n  \"transaction_status\" : \"Success\",\r\n  \"payment_mode\" : \"Paytm\",\r\n  \"payment_status\" :\"Success\",\r\n  \"order_status\" : \"Success\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/orders",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/orders/616adc199b105c916b014452",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"orders",
+								"616adc199b105c916b014452"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get order",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/orders/616adc199b105c916b014452",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"orders",
+								"616adc199b105c916b014452"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update order",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"order_status\": \"Success\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/orders/616adc199b105c916b014452",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"orders",
+								"616adc199b105c916b014452"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete orders",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/orders/616adc199b105c916b014452",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"orders",
+								"616adc199b105c916b014452"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
